@@ -28,5 +28,26 @@ public class MainController {
         int length = Integer.parseInt(scanner.nextLine());
         User user = new User(username,age, length, weight);
         view.printMessage("Hello " + username + "!\n");
+        enterCoffeeProduct(user);
+    }
+
+    private void enterCoffeeProduct(User user) {
+        view.printMessage("Which coffee product did you drink?\n");
+        BeverageType chosenBeverage = null;
+        for (int i = 0; i < beverageType.length; i++) {
+            String beverage = beverageType[i].toString().replaceAll("_"," ");
+            view.printMessage(i+1 + ". " + beverage + "\n");
+        }
+        int choice = scanner.nextInt();
+        switch (choice) {
+            case 1:
+                chosenBeverage = BeverageType.Small_coffee;
+                break;
+            case 2:
+                chosenBeverage = BeverageType.Large_coffee;
+                break;
+            case 3:
+                chosenBeverage = BeverageType.Energydrink;
+        }
     }
 }
