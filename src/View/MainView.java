@@ -1,5 +1,7 @@
 package View;
 
+import Controller.MainController;
+
 public class MainView {
 
     private MainController controller;
