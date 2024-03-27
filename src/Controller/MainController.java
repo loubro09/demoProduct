@@ -49,5 +49,14 @@ public class MainController {
             case 3:
                 chosenBeverage = BeverageType.Energydrink;
         }
+        calculateCaffeine(chosenBeverage, user);
+    }
+
+    private void calculateCaffeine(BeverageType beverageType, User user) {
+        //påhittad algoritm
+        int caffeineIntake = beverageType.getCaffeine();
+        int caffeineTime = user.getLength() + user.getLength() + caffeineIntake / user.getAge();
+        view.printMessage("You have " + caffeineIntake + " g of caffeine in your body.\n");
+        view.printMessage("The caffeine will leave your body in " + caffeineTime + " minutes.");
     }
 }
